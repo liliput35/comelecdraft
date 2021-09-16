@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SJI Commission on Elections</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <label class="logo">SJI COMMISSION ON ELECTIONS</label>
+        <nav>
+          <ul>
+            <li><a id="link1" href="#about">About</a></li>
+            <li><a id="link2" href="#mission">Mission</a></li>
+            <li><a id="link3" href="#vision">Vision</a></li>
+            <li><a id="link4" href="">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <img src="img/comelec logo1.png" alt="" />
+        <h3>ST. JOHN’S INSTITUTE</h3>
+        <h1>COMMISSION ON ELECTIONS</h1>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h1>ARBITIRIUM: A CHOICE</h1>
+        <h3>Choosing Excellence and Integrity</h3>
+
+        <div class="abouttext">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, eos?
+            Delectus voluptatum esse aspernatur repellendus unde animi ad odit
+            facere, pariatur atque quae quo natus laudantium cum sequi magni!
+            Exercitationem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam in
+            vel ad veniam ratione, eaque labore ea incidunt facere delectus vero
+            ipsam nihil alias repellendus, doloribus eos sit soluta molestiae!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-vision">
+      <div class="container">
+        <div class="column" id="mission">
+          <h1>MISSION STATEMENT</h1>
+          <p>
+            The St. John's Institute Commission on Elections commits to serve as
+            an outlet to promote a sense of unity within the school. We shall
+            develop and administer justified regulations relative to the conduct
+            of the election to ensure effectiveness, honesty and order as we
+            work to empower the Johnian community to be part of growth and
+            strength.
+          </p>
+        </div>
+        <div class="column" id="vision">
+          <h1>VISION STATEMENT</h1>
+          <p>
+            The St. John's Institute Commission on Elections envisions a fair,
+            and pragmatic system that is mounted upon the Johnian core values,
+            committed to conducting transparent processes that support the truth
+            in providing credible results while upholding integrity and honesty.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Website built and designed by Lorenz Ciocon</p>
+        <p>Copyright &copy;2021</p>
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.querySelector("nav ul");
+      const navLink = document.querySelectorAll("nav ul li");
+      const link1 = document.getElementById("link1");
+      const link2 = document.getElementById("link2");
+      const link3 = document.getElementById("link3");
+      const link4 = document.getElementById("link4");
+      const burger = document.querySelector(".burger");
+
+
+      const navSlide = () => {
+
+        burger.addEventListener("click", () => {
+          nav.classList.toggle("nav-active");
+
+          navLink.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navlinkFade 0.5s ease forwards ${
+                index / 7 + 0.3
+              }s`;
+            }
+          });
+
+          burger.classList.toggle("toggle");
+        });
+      };
+
+      link1.addEventListener('click', deToggle)
+          link2.addEventListener('click', deToggle)
+          link3.addEventListener('click', deToggle)
+          link4.addEventListener('click', deToggle)
+
+          function deToggle(){
+            nav.classList.remove("nav-active");
+            burger.classList.remove("toggle");
+
+            navLink.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navlinkFade 0.5s ease forwards ${
+                index / 7 + 0.3
+              }s`;
+            }
+          });
+          }
+      navSlide();
+    </script>
+  </body>
+</html>
